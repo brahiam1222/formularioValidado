@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+
+}
+
+
+body{
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #640b0b;
+}
+
+
+.cuadro{
+    margin: 25px;
+    padding: 25px;
+    width: 100%;
+    max-width: 70%;
+
+}
+
+span{
+    
+    font-size: 15px;
+    font-weight: bold;
+
+}
+.titulo{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ffff;
+
+}
+input{
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+
+
+}
+
+.nombre{
+    
+    background-color: #f7f7f7;
+    
+}
+.input_{
+    
+    background-color: transparent;
+    border: none;
+    padding: 10px 30px 9px 22px;
+    
+    
+}
+
+.inputDivido{
+    
+    width: calc((100% - 30px)/2);
+    display: inline-block;
+    
+}
+.input3{
+    
+    width: calc((100% - 30px)/3);
+    display: inline-block;
+    
+}
+
+form{
+    
+    background-color: #ffff;
+    padding: 20px;
+    border-radius: 10px;
+    
+    
+    
+    
+
+}
+.seleccion{
+    
+    margin-top: 15px;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: #f7f7f7 ;
+    padding: 10px;
+    max-width: fit-content;
+
+}
+
+
+.largo{
+    width: 100%;
+}
+
+.formDivide{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.Uinput{
+    position: relative;
+    border: 1px solid #e6e6e6;
+    border-radius: 13px;
+    padding: 10px 30px 9px 22px;
+    margin-bottom: 20px;
+
+}

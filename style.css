@@ -65,6 +65,22 @@ input{
     
     
 }
+.input_Validado{
+    
+    background-color: transparent;
+    padding: 10px 30px 9px 22px;
+    border: 2px solid #00ff00;
+    
+    
+}
+.input_Erroneo{
+    
+    background-color: transparent;
+    padding: 10px 30px 9px 22px;
+    border: 2px solid #ff0000;
+    
+    
+}
 
 .inputDivido{
     
@@ -115,7 +131,7 @@ form{
 }
 .Uinput{
     position: relative;
-    border: 1px solid #e6e6e6;
+    /* border: 1px solid #e6e6e6; */
     border-radius: 13px;
     padding: 10px 30px 9px 22px;
     margin-bottom: 20px;

@@ -1,58 +1,64 @@
 
 const expresiones = {
-	// usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{4,12}$/, // 4 a 12 digitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+	nombres: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+	contraseña: /^.{8,12}$/, // 8 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.].{1,2}$/,
+	telefono: /^\d{7,10}$/ // 7 a 10 numeros.
 }
 const form = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
-
+console.log(inputs);
 
 const validarInput = (e) => {
 
     switch (e.target.name) {
         case "nombre":
-            // console.log("sin errores");
-            if (expresiones.nombre.test(e.target.value)) {
-                // console.log(e.target.value)
-                document.getElementById('input_nombre').classList.remove('input_Erroneo');
-                document.getElementById('input_nombre').classList.add('input_Validado');
-            }else{
-                document.getElementById('input_nombre').classList.add('input_Erroneo');
-            }
             
-            
+            validarCampos(expresiones.nombres, e.target, e.target.name);
+            //  console.log(expresiones.e.target.name);
         break;
         case "apellido":
            
-            
+            validarCampos(expresiones.nombres, e.target, 'apellido');
+            // console.log(expresiones.nombres);
+            // console.log(e.target);
+            // console.log('apellido');
             
         break;
         case "contraseña":
            
-            
+            validarCampos(expresiones.contraseña, e.target, e.target.name);
+            // console.log(e.target.value);
             
         break;
         case "confirmar":
-           
-            
+        
+        
             
         break;
         case "correo":
            
-            
+            validarCampos(expresiones.correo, e.target, e.target.name);
             
         break;
-        case "cargo":
+        // case "cargo":
+            
            
+        //     if(e.target.value == "0"){
+        //         document.getElementById(`input_${e.target.name}`).classList.remove('input_Validado');
+        //         document.getElementById(`input_${e.target.name}`).classList.add('input_Erroneo');
+        //         alert('Seleccione un cargo');
+        //     }else{
+        //         document.getElementById(`input_${e.target.name}`).classList.remove('input_Erroneo');
+        //     }
+
+        //     console.log(e.target.value);
+
             
-            
-        break;
+        // break;
         case "telefono":
            
-            
+            validarCampos(expresiones.telefono, e.target, e.target.name);
             
         break;
         case "genero":
@@ -62,7 +68,10 @@ const validarInput = (e) => {
         break;
         case "fecha":
            
+
             
+            // e.target.addEventListener('change', () => {
+            //     console.log(fechaNacimiento.value);
             
         break;
         case "edad":
@@ -83,6 +92,63 @@ const validarInput = (e) => {
 
 }
 
+    function validarSelect(){
+        
+
+        var cargo = document.getElementById('cargo');
+            if(cargo.value == "0"|| cargo.value == ""){
+
+                cargo.classList.remove('input_Validado');
+                cargo.classList.add('input_Erroneo');
+                return;
+                
+            }else{
+                cargo.classList.remove('input_Erroneo');
+                cargo.classList.add('input_Validado');
+                // alert('seleccion exitosa');
+                
+                
+
+            }
+            console.log(cargo.value);
+
+            // const calcularEdad = () => {
+
+                
+
+
+
+
+
+        // if(document.getElementById('cargo').value == ""){
+        //     document.getElementById('input_cargo').classList.remove('input_Validado');
+        //     document.getElementById('input_cargo').classList.add('input_Erroneo');
+        //     alert('Seleccione un cargo');
+        // }else{
+        //     document.getElementById('input_cargo').classList.remove('input_Erroneo');
+        // }
+        
+        // console.log(validarSelect);
+    
+    }
+
+const validarCampos = (expresion, input, campo) => {
+
+    // console.log("sin errores");
+    if (expresion.test(input.value)) {
+        // console.log(e.target.value)
+        
+        document.getElementById(`input_${campo}`).classList.remove('input_Erroneo');
+        document.getElementById(`input_${campo}`).classList.add('input_Validado');
+    }else{
+        document.getElementById(`input_${campo}`).classList.remove('input_Validado');
+        document.getElementById(`input_${campo}`).classList.add('input_Erroneo');
+    }
+
+
+}
+
+
 
 inputs.forEach((input)=>{ 
     input.addEventListener('keyup', validarInput);
@@ -94,8 +160,10 @@ inputs.forEach((input)=>{
 form.addEventListener('submit', (e) => {
 
     e.preventDefault();
+    // document.getElementsByName('cargo').forEach(element => {
+    // element.addEventListener('blur', validarSelect());
 
-
+    // });
 
 
 

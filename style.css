@@ -99,13 +99,29 @@ form{
     
     background-color: #ffff;
     padding: 20px;
-    border-radius: 10px;
-    
-    
-    
-    
+    border-radius: 10px; 
 
 }
+.radio {
+    
+    
+    
+    
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+
+} 
+
+/* div:hover{
+    
+    background-color: #640b0b;
+    color: #ffff;
+    
+} */
+
+
 .seleccion{
     
     margin-top: 15px;

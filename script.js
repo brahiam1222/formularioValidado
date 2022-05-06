@@ -80,6 +80,7 @@ const validarInput = (e) => {
         break;
         case "fecha":
            calcularEdad();
+            campos.fecha = true;
             // console.log(e.target);
 
             // e.target.addEventListener('change', () => {
@@ -200,12 +201,13 @@ const validarCampos = (expresion, input, campo) => {
         }else if (mesActual == mesNacimiento) {
             if (diaActual < diaNacimiento) {
                 edad= edad - 1;
+                campos.fecha = true;
             }
 
         }
 
         return edad;
-        campos.fecha = true;
+        // campos.fecha = true;
 
 
 
@@ -244,12 +246,13 @@ form.addEventListener('submit', (e) => {
 
     e.preventDefault();
 
-    if (campos.nombre && campos.apellido && campos.contraseña && campos.confirmar && campos.correo && campos.telefono && campos.fecha && campos.terminos) {
+    if (campos.nombre==true && campos.apellido==true && campos.correo==true && campos.telefono==true && campos.fecha==true && campos.cargo==true && campos.confirmar==true) {
         console.log('todo bien');
-        form.submit();
+        console.log(campos);
+        // form.submit();
     }else{
         alert('Por favor complete todos los campos');
-        
+        console.log(campos);
     }
 
 
